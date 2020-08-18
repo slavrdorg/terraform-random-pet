@@ -1,8 +1,10 @@
-resource "random_pet" "pet" {
-  length = var.name_length
-}
+variable "number" {}
 
 resource "random_pet" "pet2" {
-  length = var.name_length
+  length = 5
+  count = "${var.number}"
 }
 
+output "random_pet_id" {
+  value = "${random_pet.pet2.*.id}"
+}

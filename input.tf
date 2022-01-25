@@ -1,5 +1,5 @@
 variable "name_length" {
   type = number
-  default = 4
+  default = 6
   description = "pet name length"
 }
